@@ -8,7 +8,7 @@
 
 body {
     font-family: 'DM Sans', sans-serif;
-    background-image: linear-gradient(120deg, #e9bc37, #ea580c);
+    background-image: linear-gradient(100deg, #e9bc37 30%, #ea580c);
     color: white;
     min-height: 100vh;
 }
@@ -65,7 +65,6 @@ form button:hover {
     justify-content: space-between;
     align-items: center;
     transition: all 0.5s ease;
-
 }
 
 .todo-div li {
@@ -113,8 +112,48 @@ form button:hover {
     pointer-events: none;
 }
 
-.todo-complete{
+.completed{
     text-decoration: line-through;
     opacity: 0.5;
-    
+  }
+
+.fall{
+    transform:translateY(8rem) rotateZ(20deg);
+    opacity:0;
+}
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+.select{
+    margin:1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+select{
+    color: #e9bc37;
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.select::after{
+    content: "\25BC";
+    position: absolute;
+    background: #e9bc37;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.select:hover::after{
+    background: white;
+    color: #e9bc37;
 }
